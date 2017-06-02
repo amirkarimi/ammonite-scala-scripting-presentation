@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>PITCHME.html</title>
+
+</head>
+
+<body>
+
+<h2>Scripting for Scala lovers</h2>
+
+<h4><span style="color: gray">or</span></h4>
+
+<h2>### <span style="color: #ffb500">How to push Scala Devs to Ops</span></h2>
+
+<h2># Bash</h2>
+
+<h2>Bash <small>Pros</small></h2>
+
+<ul>
+<li>Accessible</li>
+<li>Easy to start</li>
+<li>Pipes</li>
+<li>TBD</li>
+</ul>
+
+<hr />
+
+<h2>Bash <small>Cons</small></h2>
+
+<h3>Not a real programming language</h3>
+
+<ul>
+<li>Structures</li>
+<li>If/else</li>
+<li>Loop</li>
+<li>etc.</li>
+</ul>
+
+<p>+++</p>
+
+<h2>Bash <small>Cons</small></h2>
+
+<h3>No checking/safety mechanism</h3>
+
+<p>You're 20% sure that it works before running it!</p>
+
+<p><code>bash
+let c = $a - $b    // Incorrect
+let c=$a-$b        // Correct
+</code>
+<code>
+if [ $a -le 5]     // Incorrect
+if [ $a -le 5 ]    // Correct
+</code></p>
+
+<p>Checkout http://tldp.org/LDP/abs/html/gotchas.html</p>
+
+<p>+++</p>
+
+<h2>Bash <small>Cons</small></h2>
+
+<ul>
+<li>Hard to maintain</li>
+<li>Not so composable (pipes are good but not enough)
+<ul>
+<li>List files which are less than 1KB and the file name length is less than 20</li>
+</ul></li>
+<li>Magic switches (Ex. file size filter)</li>
+</ul>
+
+<hr />
+
+<h2>Why we haven't replaced Bash with something better?</h2>
+
+<p>+++</p>
+
+<ul>
+<li><span style="color: #ffb500">File Operations</span> are almost always hard in other languages</li>
+<li><span style="color: #ffb500">REPL</span> didn't exist for many languages (Java is in the process of getting REPL)</li>
+<li>Once upon a time... <span style="color: #ffb500">DevOps</span> wasn't even defined
+<ul>
+<li>Developers used to have nothing to do with operations. There was a separate network/sysadmin team</li>
+<li>Operation guys didn't like programming, they just wanted everything up and running</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h1>Now What?</h1>
+
+<p>+++</p>
+
+<h2>Scala Scripting</h2>
+
+<p>Automate your life using <span style="color: #ffb500">Scala</span> without having to setup a huge <code>build.sbt</code></p>
+
+<p><img src="assets/img/happy-meme.jpg" alt="Happy" title="" /></p>
+
+<p>+++</p>
+
+<p>```bash
+$ sudo curl -L -o /usr/local/bin/amm https://git.io/vHugK \
+    &amp;&amp; sudo chmod +x /usr/local/bin/amm \
+    &amp;&amp; amm</p>
+
+<p>$ amm your-awesome-script.sc
+```</p>
+
+<p>+++</p>
+
+<h2>Demo 1</h2>
+
+<hr />
+
+<p>IDEAS:
+- Use ammonite to fetch some data from inside an AWS (http://169.254.169.254/latest/placement/availability-zone)</p>
+
+<h1>Bye bye</h1>
+
+</body>
+</html>
