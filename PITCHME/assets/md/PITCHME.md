@@ -83,7 +83,90 @@ $ amm your-awesome-script.sc
 
 +++
 
-## Demo 1 ##
+## Demo: Ammonite REPL ##
+
++++
+
+### A colon-separeted list of files in current directory ###
+
+Bash
+
+```bash
+ls -dm *    # Not really the answer but close enough
+```
+
+Scala
+
+```scala
+(ls! pwd).mkString(":")
+```
+
++++
+
+### Only files, not directories ###
+
+Bash
+
+```bash
+# Sorry, too hard for me
+```
+
+Scala
+
+```scala
+(ls! pwd).filter(_.isFile).mkString(":")
+```
+
++++
+
+### Filter out hidden files
+
+Scala
+
+``` scala
+(ls! pwd)
+  .filter(_.isFile)
+  .filterNot(_.name.start("."))
+  .mkString(":")
+
+(ls! pwd)
+  .filter(f => f.isFile && !f.name.startsWith("."))
+  .mkString(":")
+```
+
+---
+
+## Scala Script File ##
+
+We saw the REPL, let's write real scripts
+
++++
+
+### \#! ###
+
+MyScript.sc
+
+```scala
+#!/usr/bin/env amm
+
+(ls! pwd)
+  .filter(f => f.isFile && !f.name.startsWith("."))
+  .mkString(":")
+```
+
+Run
+
+```
+$ ./MyScript.sc
+```
+
+```
+$ amm MyScript.sc
+```
+
++++
+
+## Demo: Some Cool Script ##
 
 ---
 
