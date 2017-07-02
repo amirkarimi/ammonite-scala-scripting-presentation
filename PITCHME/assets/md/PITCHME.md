@@ -8,13 +8,15 @@
 ## Bash <small>Pros</small>
 
 - Accessible
-- Easy to start
+- No learning curve
 - Pipes
-- TBD
+- etc.
 
 ---
 ## Bash <small>Cons</small>
 ### Not a real programming language
+
+Not good at:
 
 - Structures
 - If/else
@@ -166,7 +168,14 @@ $ amm MyScript.sc
 
 +++
 
-## Demo: Some Cool Script ##
+## Demo: Some Cool Script
+
+TODO:
+AWS CloudFormation Recreation
+
+---
+
+## Demo: Create a webserver
 
 ---
 
