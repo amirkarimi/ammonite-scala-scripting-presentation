@@ -180,6 +180,8 @@ AWS CloudFormation Recreation
 ---
 
 IDEAS:
+- Ask people what work is very hard or imposible to do with `ls` which you know how it can be done (Algorithm)
+- (Porbably appropirate for last slide) Ammonite Scripting is not against Unix phylosophy, it just does one thing; just runs the algorithms, and does it well!
 - Use ammonite to fetch some data from inside an AWS (http://169.254.169.254/latest/placement/availability-zone)
 
 # Bye bye
