@@ -253,5 +253,9 @@ play-demo.sc
 ---
 
 # Thank you
-
 @4m1rk
+
+IDEAS:
+- Ask people what work is very hard or imposible to do with `ls` which you know how it can be done (Algorithm)
+- (Probably appropriate for last slide) Ammonite Scripting is not against Unix philosophy, it just does one thing; just runs the algorithms, and does it well! (Read about "Linux is dead...")
+
