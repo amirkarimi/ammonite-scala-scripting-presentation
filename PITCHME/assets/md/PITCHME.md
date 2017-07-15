@@ -55,8 +55,8 @@ Checkout http://tldp.org/LDP/abs/html/gotchas.html
 
 +++
 
-- <span style="color: #ffb500">File Operations</span> are almost always hard in other languages
-- <span style="color: #ffb500">REPL</span> didn't exist for many languages (Java is in the process of getting REPL)
+- <span style="color: #ffb500">File Operations</span> are almost always hard in real programming languages
+- <span style="color: #ffb500">REPL</span> didn't exist for many languages (even Java is in the process of getting a REPL)
 - Once upon a time... <span style="color: #ffb500">DevOps</span> wasn't even defined
   - Developers used to have nothing to do with operations. There was a separate network/sysadmin team
   - Operation guys didn't like programming, they just wanted everything up and running
@@ -67,13 +67,29 @@ Checkout http://tldp.org/LDP/abs/html/gotchas.html
 
 +++
 
-## Scala Scripting ##
+## Ammonite Shell ##
+
+http://ammonite.io/
 
 Automate your life using <span style="color: #ffb500">Scala</span> without having to setup a huge `build.sbt`
 
 ![Happy](assets/img/happy-meme.jpg)
 
 +++
+
+### Benefits
+
+- A real language, a powerful one!
+- Single file scripts
+- Typesafety
+- Functional
+- Composable
+- JVM libraries
+  - You can even spin up a web server in your script
+
++++
+
+### Install
 
 ```bash
 $ sudo curl -L -o /usr/local/bin/amm https://git.io/vHugK \
@@ -85,11 +101,18 @@ $ amm your-awesome-script.sc
 
 +++
 
-## Demo: Ammonite REPL ##
+### Demo: Ammonite REPL & Scala
+
+- `Seq`
+- Infix notation (`1 to 10`)
+- `map`, `filter`
+- `_` placeholder
 
 +++
 
-### A colon-separeted list of files in current directory ###
+## Case Study
+
+### A colon-separeted list of files ###
 
 Bash
 
@@ -117,6 +140,8 @@ Scala
 
 ```scala
 (ls! pwd).filter(_.isFile).mkString(":")
+
+(ls! pwd) |? (_.isFile)
 ```
 
 +++
@@ -129,11 +154,23 @@ Scala
 (ls! pwd)
   .filter(_.isFile)
   .filterNot(_.name.start("."))
-  .mkString(":")
 
 (ls! pwd)
   .filter(f => f.isFile && !f.name.startsWith("."))
-  .mkString(":")
+```
++++
+
+### Filter on extension
+
+Scala
+
+```scala
+(ls! pwd)
+  .filter(f =>
+    f.isFile && 
+    !f.name.startsWith(".") && 
+    f.ext == "pem"
+  )
 ```
 
 ---
@@ -144,9 +181,9 @@ We saw the REPL, let's write real scripts
 
 +++
 
-### \#! ###
+### Shebang \#! ###
 
-MyScript.sc
+my_script.sc
 
 ```scala
 #!/usr/bin/env amm
@@ -158,28 +195,63 @@ MyScript.sc
 
 Run
 
-```
-$ ./MyScript.sc
+```bash
+$ ./my_script.sc
 ```
 
-```
-$ amm MyScript.sc
+```bash
+$ amm my_script.sc
 ```
 
 +++
 
-## Demo: Some Cool Script
+### Running other programs
 
-TODO:
-AWS CloudFormation Recreation
+```scala
+%git 'status
+
+%%git 'status
+```
++++
+
+### JVM Libraries
+
+```scala
+import $ivy.`joda-time:joda-time:2.8.2`
+
+import org.joda.time.DateTime
+```
+
+```scala
+import $ivy.`joda-time:joda-time:2.8.2`, org.joda.time._
+```
+
++++
+
+### Demo - Script Arguments
+
+arguments.sc
+
++++
+
+### Demo - Some Real Scripts
+
+AWS CloudFormation Recreation (recreat-stack.sc)
+
++++
+
+### Demo: Watch and Reload
+
+```bash
+amm -w foo.sc
+```
+
+## Demo: Webserver
+
+play-demo.sc
 
 ---
 
-## Demo: Create a webserver
+# Thank you
 
----
-
-IDEAS:
-- Use ammonite to fetch some data from inside an AWS (http://169.254.169.254/latest/placement/availability-zone)
-
-# Bye bye
+@4m1rk
