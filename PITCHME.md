@@ -28,15 +28,19 @@ Not good at:
 ## Bash <small>Cons</small>
 ### No checking/safety mechanism
 
-You're 20% sure that it works before running it!
+You're not sure that it works before running it!
 
 ```bash
 let c = $a - $b    // Incorrect
 let c=$a-$b        // Correct
 ```
-```
+```bash
 if [ $a -le 5]     // Incorrect
 if [ $a -le 5 ]    // Correct
+```
+```bash
+cp $file $target         // Not safe
+cp -- "$file" "$target"  // More safe
 ```
 
 Checkout http://tldp.org/LDP/abs/html/gotchas.html
@@ -246,16 +250,26 @@ AWS CloudFormation Recreation (recreat-stack.sc)
 amm -w foo.sc
 ```
 
++++
+
 ## Demo: Webserver
 
 play-demo.sc
 
 ---
 
+## Summary
+
+- As a DevOps, you can
+  - learn Scala by using that in your day-to-day works
+  - build more reliable and maintanable scripts/tools
+- As a Dev, you can
+  - Enjoy doing DevOps tasks
+  - Be a real DevOps
+- As a team, we can
+  - Have common language for our tools
+
+---
+
 # Thank you
 @4m1rk
-
-IDEAS:
-- Ask people what work is very hard or imposible to do with `ls` which you know how it can be done (Algorithm)
-- (Probably appropriate for last slide) Ammonite Scripting is not against Unix philosophy, it just does one thing; just runs the algorithms, and does it well! (Read about "Linux is dead...")
-
