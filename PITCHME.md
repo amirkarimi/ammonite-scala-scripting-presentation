@@ -77,7 +77,7 @@ http://ammonite.io/
 
 Automate your life using <span style="color: #ffb500">Scala</span> without having to setup a huge `build.sbt`
 
-![Happy](assets/img/happy-meme.jpg)
+![Happy](happy-meme.jpg)
 
 +++
 
