@@ -13,6 +13,16 @@
 - etc.
 
 ---
+
+## Bash <small>Cons</small>
+- Hard to maintain
+- Not so composable (pipes are good but not enough)
+  - List files which are less than 1KB and the file name length is less than 20
+- Magic switches (Ex. file size filter)
+- You know the algorithm but you don't know how to implement
+
++++
+
 ## Bash <small>Cons</small>
 ### Not a real programming language
 
@@ -45,14 +55,6 @@ cp -- "$file" "$target"  // More safe
 
 Checkout http://tldp.org/LDP/abs/html/gotchas.html
 
-+++
-
-## Bash <small>Cons</small>
-- Hard to maintain
-- Not so composable (pipes are good but not enough)
-  - List files which are less than 1KB and the file name length is less than 20
-- Magic switches (Ex. file size filter)
-
 ---
 
 ## Why we haven't replaced Bash with something better?
@@ -77,7 +79,7 @@ http://ammonite.io/
 
 Automate your life using <span style="color: #ffb500">Scala</span> without having to setup a huge `build.sbt`
 
-![Happy](happy-meme.jpg)
+![Happy](assets/img/happy-meme.jpg)
 
 +++
 
@@ -171,8 +173,8 @@ Scala
 ```scala
 (ls! pwd)
   .filter(f =>
-    f.isFile && 
-    !f.name.startsWith(".") && 
+    f.isFile &&
+    !f.name.startsWith(".") &&
     f.ext == "pem"
   )
 ```
@@ -267,7 +269,7 @@ play-demo.sc
   - Enjoy doing DevOps tasks
   - Be a real DevOps
 - As a team, we can
-  - Have common language for our tools
+  - Have a common language for our tools
 
 ---
 
